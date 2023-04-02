@@ -1,0 +1,15 @@
+div.heading {
+    background-color: black;
+    height: 100px;
+}
+div.welcome {
+    height: 50px;
+    display: center;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 200px;
+}
+form {
+  text-align: center;
+}
+
