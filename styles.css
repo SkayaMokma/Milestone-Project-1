@@ -1,6 +1,9 @@
 div.heading {
-    background-color: black;
+    background-color: lightpink;
     height: 100px;
+    text-align: left;
+    font-size: 20px
+    
 }
 div.welcome {
     height: 50px;
@@ -11,5 +14,7 @@ div.welcome {
 }
 form {
   text-align: center;
+  position:relative; 
+  z-index: 5;
 }
 
