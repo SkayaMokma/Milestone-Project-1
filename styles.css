@@ -1,33 +1,99 @@
-div.heading {
+.container {
+  width: 227.4vh;
+  height: 350px;
+
+}
+
+.heading {
     background-color: darkcyan;
-    width: 100%;
-    height: 100px;
+    width: 98%;
+    height: 10vh;
     display: flex;
     flex-direction: row;
-    
     text-align: left;
     font-size: 25px;
     border: 2px solid black;
     padding: 20px;
     font-family: 'rockwell'; 
-     
+    position: absolute;
+    top: 0px;    
 }
-div.welcome {
-    height: 50px;
+
+.welcome {
     display: center;
     font-size: 30px;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 100px;
     font-family: 'rockwell'
 }
+
 form {
+  width: 225vh;
+  height: 90px;
   text-align: center;
-  position: relative; 
+  position: relative;
   z-index: 5;
+  fill: white;
+  background-color: white;
+  border: 2px solid black;
+
 }
 
-img {
-  width: 16%;
+.tree {
+  height: 275px;
+  z-index: 3;
+
+}
+.flowerBush {
+  height: 90px;
+}
+.roses {
+  height: 60px;
+}
+.pond {
+  height: 200px;
+  z-index: -2
+}
+.rocks {
+  height: 90px;
+}
+.flowers {
+  height: 100px;
+}
+.tree2 {
+  height: 215px;
+  z-index: -1;
 }
 
+.character {
+  height: 75px;
+  z-index: 2;
+}
+.star {
+  height: 30px;
+}
+.inventory {
+  background-color: dimgray;
+  width: 98%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid black;
+  position: absolute;
+  bottom: 0px;
+  padding: 20px;
 
+}
+
+/* @media (min-width: 900px) {
+  .container {
+    flex-direction: row;
+    
+  }
+  form {
+    left: 200px;
+    top: 100px;
+  }
+} */
