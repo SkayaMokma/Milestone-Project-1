@@ -13,22 +13,6 @@ function getUserName(){
     return input
     // input is username . function stores username and displays it in the top bar 
 }
-//form.addEventListener("submit", getUserName)
-
-//newInventory function to display items
-// function newInventory(){
-//     let inventory = document.createElement('div')
-//     inventory.style.width = '100%'
-//     inventory.style.height = '100px'
-//     inventory.style.display = 'flex'
-//     inventory.style.flexDirection = 'row'
-//     inventory.style.alignItems = 'center'
-//     inventory.style.justifyContent = 'space-evenly'
-//     inventory.style.border = '2px solid black'
-//     inventory.style.backgroundColor = 'dimgray'
-//     document.body.append(inventory)
-//     return inventory
-// }
 
 // move function to control the character
 function move(element) {
@@ -152,5 +136,7 @@ move(newImage('https://tse1.explicit.bing.net/th?id=OIP.xH0KgqgGNJe62NiSRtoU5QHa
 move(newImage('https://clipground.com/images/nature-clipart-transparent-7.png', 'flowers')).to(1100, 100)
 move(newImage('https://clipground.com/images/nature-clipart-transparent-7.png', 'flowers')).to(940, 100)
 move(newImage('https://tse1.mm.bing.net/th?id=OIP.wyXw6yOaGsy62XcDKIPMMwHaIK&pid=Api&P=0', 'tree2')).to(1125,100)
+move(newImage('https://tse1.mm.bing.net/th?id=OIP.kn95-AB9VkRpD2Kit3Zp0QHaHl&pid=Api&P=0', 'waterfall')).to(5, 250)
+move(newImage('https://webstockreview.net/images/dirt-clipart-grass-14.png', 'meadow')).to(-40 ,75)
 
 move(newItem('https://cdn.onlinewebfonts.com/svg/img_107813.png', 'star')).to(100, 700)
