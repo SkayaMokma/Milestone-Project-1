@@ -34,13 +34,13 @@ function move(element) {
                 if(direction === 'west' && x > 0){
                     x-=1
                 }
-                if(direction === 'north' && y < 600){
+                if(direction === 'north' && y < 350){
                     y+=1
                 }
-                if(direction === 'east'){
+                if(direction === 'east' && x < 1210){
                     x+=1
                 }
-                if(direction === 'south'){
+                if(direction === 'south' && y > 102){
                     y-=1
                 }
                 
@@ -129,14 +129,17 @@ document.createElement('img')
 
 move(character).withArrowKeys(310, 215, handleDirectionChange)
 move(newImage('https://clipground.com/images/transparent-tree-clipart-3.png', 'tree')).to(200, 195)
-move(newImage('https://tse1.mm.bing.net/th?id=OIP.PjjmmdFYEKcgWdameLuzcgHaGh&pid=Api&P=0', 'flowerBush')).to(800, 150)
+move(newImage('https://tse1.mm.bing.net/th?id=OIP.PjjmmdFYEKcgWdameLuzcgHaGh&pid=Api&P=0', 'bush')).to(780, 110)
 move(newImage('https://tse4.mm.bing.net/th?id=OIP.W1w7cloFTQfXgUSpBRNExQHaIS&pid=Api&P=0', 'roses')).to(550, 300)
 move(newImage('https://tse4.mm.bing.net/th?id=OIP.IPkTQ3Qh9gbK_JvkdyP7wwHaHx&pid=Api&P=0', 'pond')).to(1000, 250)
-move(newImage('https://tse1.explicit.bing.net/th?id=OIP.xH0KgqgGNJe62NiSRtoU5QHaDq&pid=Api&P=0', 'rocks')).to(700, 350)
+move(newImage('https://tse1.explicit.bing.net/th?id=OIP.xH0KgqgGNJe62NiSRtoU5QHaDq&pid=Api&P=0', 'rocks')).to(650, 350)
 move(newImage('https://clipground.com/images/nature-clipart-transparent-7.png', 'flowers')).to(1100, 100)
 move(newImage('https://clipground.com/images/nature-clipart-transparent-7.png', 'flowers')).to(940, 100)
 move(newImage('https://tse1.mm.bing.net/th?id=OIP.wyXw6yOaGsy62XcDKIPMMwHaIK&pid=Api&P=0', 'tree2')).to(1125,100)
 move(newImage('https://tse1.mm.bing.net/th?id=OIP.kn95-AB9VkRpD2Kit3Zp0QHaHl&pid=Api&P=0', 'waterfall')).to(5, 250)
 move(newImage('https://webstockreview.net/images/dirt-clipart-grass-14.png', 'meadow')).to(-40 ,75)
+move(newImage('https://tse1.mm.bing.net/th?id=OIP.8fAtwanMyEHSIzDfLyYbWAHaGT&pid=Api&P=0', 'path')).to(370,50)
+move(newImage('https://tse4.mm.bing.net/th?id=OIP.1MplLandC-y782bNodABVwHaCm&pid=Api&P=0', 'grass')).to(740,235)
 
-move(newItem('https://cdn.onlinewebfonts.com/svg/img_107813.png', 'star')).to(100, 700)
+move(newItem('https://cdn.onlinewebfonts.com/svg/img_107813.png', 'star'))
+.to(100, 700)

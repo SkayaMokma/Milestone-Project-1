@@ -44,7 +44,7 @@ form {
   z-index: 3;
 
 }
-.flowerBush {
+.bush {
   height: 90px;
 }
 .roses {
@@ -70,7 +70,6 @@ form {
 }
 .meadow {
   height: 150px;
-
 }
 .character {
   height: 75px;
@@ -78,6 +77,19 @@ form {
 }
 .star {
   height: 30px;
+}
+.path {
+  height: 300px;
+  z-index: -1;
+  rotate: 15deg
+}
+.path2 {
+  height: 100px;
+  rotate: 20deg;
+  z-index: 1;
+}
+.grass {
+  height: 90px;
 }
 .inventory {
   background-color: dimgray;
