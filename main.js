@@ -1,18 +1,30 @@
 // welcome and username form
 
-// trying to make this file alter both html files
+let name = document.getElementById('userInput')
+let form = document.getElementById('form')
 
-let name = document.getElementById("userInput")
-let form = document.getElementById("form")
 function getUserName(){
     // window.location.href = 'gameScreen.html'
+    let heading = document.getElementById('heading')
     let input = document.getElementById('userInput').value
     form.hidden= true
-    let top = document.getElementById("heading")
-    top.append(input)
+    heading.append(input)
+   
+    function userLives(url, className){
+        let life = document.createElement('img')
+        life.src = url
+        life.className = className
+        heading.append(life)
+        return life
+    }
+    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart')
+    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart')
+    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart')
+    
     return input
     // input is username . function stores username and displays it in the top bar 
 }
+
 
 // move function to control the character
 function move(element) {
@@ -92,13 +104,16 @@ function newImage(url, className){
 // newItem function to add images that will be "picked up" upon clicking
 function newItem(url, className) {
     let item = newImage(url, className)
+  
     newImage.className = className
     item.addEventListener('click', () => {
         item.remove()
         let inventoryItem = document.createElement('img')
         inventoryItem.src = url;
+        inventoryItem.className = className
         inventory.append(inventoryItem)
-    })
+    
+     })
     return item
 }
 function handleDirectionChange(direction){
@@ -141,5 +156,10 @@ move(newImage('https://webstockreview.net/images/dirt-clipart-grass-14.png', 'me
 move(newImage('https://tse1.mm.bing.net/th?id=OIP.8fAtwanMyEHSIzDfLyYbWAHaGT&pid=Api&P=0', 'path')).to(370,50)
 move(newImage('https://tse4.mm.bing.net/th?id=OIP.1MplLandC-y782bNodABVwHaCm&pid=Api&P=0', 'grass')).to(740,235)
 
-move(newItem('https://cdn.onlinewebfonts.com/svg/img_107813.png', 'star'))
-.to(100, 700)
+
+
+move(newItem('https://cdn.onlinewebfonts.com/svg/img_107813.png', 'star')).to(1180, 400)
+move(newItem('http://www.carstickers.com/prodimages/1875_daisy_flower_sticker_decal.gif', 'flowerItem')).to(979, 130)
+move(newItem('https://i.pinimg.com/originals/2c/f7/3a/2cf73a713a1cad2119852971fd87b438.png', 'diamond')).to(760,410)
+move(newItem('http://designlooter.com/images/water-drop-svg-13.png', 'water')).to(170, 200)
+move(newItem('https://www.freeiconspng.com/uploads/leaf-icon-png-6.png', 'leaf')).to(520, 240)

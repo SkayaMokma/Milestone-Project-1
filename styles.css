@@ -10,13 +10,14 @@
     height: 10vh;
     display: flex;
     flex-direction: row;
-    text-align: left;
     font-size: 25px;
     border: 2px solid black;
     padding: 20px;
     font-family: 'rockwell'; 
     position: absolute;
-    top: 0px;    
+    top: 0px;  
+   
+  
 }
 
 .welcome {
@@ -38,7 +39,9 @@ form {
   border: 2px solid black;
 
 }
-
+.heart {
+  text-align: center;
+}
 .tree {
   height: 275px;
   z-index: 3;
@@ -75,9 +78,6 @@ form {
   height: 75px;
   z-index: 2;
 }
-.star {
-  height: 30px;
-}
 .path {
   height: 300px;
   z-index: -1;
@@ -90,6 +90,22 @@ form {
 }
 .grass {
   height: 90px;
+}
+.star {
+  height: 30px;
+}
+.flowerItem {
+  height: 30px;
+}
+.diamond {
+  height: 45px;
+  z-index: 2;
+}
+.water {
+  height: 30px;
+}
+.leaf {
+  height: 40px;
 }
 .inventory {
   background-color: dimgray;
