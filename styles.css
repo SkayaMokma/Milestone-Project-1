@@ -1,12 +1,12 @@
 .container {
-  width: 227.4vh;
+  width: 100%;
   height: 350px;
  
 }
 
 .heading {
     background-color: darkcyan;
-    width: 98%;
+    width: 100%;
     height: 10vh;
     display: flex;
     flex-direction: row;
@@ -29,7 +29,7 @@
 }
 
 form {
-  width: 225vh;
+  width: 100%;
   height: 90px;
   text-align: center;
   position: relative;
@@ -39,12 +39,12 @@ form {
   border: 2px solid black;
 
 }
-.heart {
+.heart1, .heart2, .heart3 {
   text-align: center;
 }
 .tree {
   height: 275px;
-  z-index: 3;
+  z-index: 4;
 
 }
 .bush {
@@ -76,7 +76,7 @@ form {
 }
 .character {
   height: 75px;
-  z-index: 2;
+  z-index: 3;
 }
 .path {
   height: 300px;
@@ -109,7 +109,7 @@ form {
 }
 .inventory {
   background-color: dimgray;
-  width: 98%;
+  width: 100%;
   height: 10vh;
   display: flex;
   flex-direction: row;
@@ -119,16 +119,4 @@ form {
   position: absolute;
   bottom: 0px;
   padding: 20px;
-
 }
-
-/* @media (min-width: 900px) {
-  .container {
-    flex-direction: row;
-    
-  }
-  form {
-    left: 200px;
-    top: 100px;
-  }
-} */

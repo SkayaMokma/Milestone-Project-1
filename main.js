@@ -15,12 +15,16 @@ function getUserName(){
         life.src = url
         life.className = className
         heading.append(life)
-        return life
+        
     }
-    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart')
-    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart')
-    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart')
-    
+    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart1')
+    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart2')
+    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart3')
+    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart4')
+    userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart5')
+
+
+
     return input
     // input is username . function stores username and displays it in the top bar 
 }
@@ -102,20 +106,23 @@ function newImage(url, className){
     return image
 }
 // newItem function to add images that will be "picked up" upon clicking
-function newItem(url, className) {
-    let item = newImage(url, className)
-  
+
+function newItem(url, className, id) {
     newImage.className = className
+    let item = newImage(url, className, id)
     item.addEventListener('click', () => {
         item.remove()
         let inventoryItem = document.createElement('img')
-        inventoryItem.src = url;
+        inventoryItem.src = url
         inventoryItem.className = className
+        inventoryItem.id = id
         inventory.append(inventoryItem)
-    
+       
      })
-    return item
+     return item
 }
+
+
 function handleDirectionChange(direction){
     if(direction === null){
         character.src = 'https://tse3.mm.bing.net/th?id=OIP.LpiWWF-WWtVFepE4VtysFQHaEK&pid=Api&P=0'
@@ -156,10 +163,63 @@ move(newImage('https://webstockreview.net/images/dirt-clipart-grass-14.png', 'me
 move(newImage('https://tse1.mm.bing.net/th?id=OIP.8fAtwanMyEHSIzDfLyYbWAHaGT&pid=Api&P=0', 'path')).to(370,50)
 move(newImage('https://tse4.mm.bing.net/th?id=OIP.1MplLandC-y782bNodABVwHaCm&pid=Api&P=0', 'grass')).to(740,235)
 
+move(newItem('https://cdn.onlinewebfonts.com/svg/img_107813.png', 'star', 'star',)).to(1180, 400)
+move(newItem('http://www.carstickers.com/prodimages/1875_daisy_flower_sticker_decal.gif', 'flowerItem', 'flowerItem')).to(979, 130)
+move(newItem('https://i.pinimg.com/originals/2c/f7/3a/2cf73a713a1cad2119852971fd87b438.png', 'diamond', 'diamond')).to(760,410)
+move(newItem('http://designlooter.com/images/water-drop-svg-13.png', 'water', 'water')).to(170, 200)
+move(newItem('https://www.freeiconspng.com/uploads/leaf-icon-png-6.png', 'leaf', 'leaf')).to(520, 240)
 
-
-move(newItem('https://cdn.onlinewebfonts.com/svg/img_107813.png', 'star')).to(1180, 400)
-move(newItem('http://www.carstickers.com/prodimages/1875_daisy_flower_sticker_decal.gif', 'flowerItem')).to(979, 130)
-move(newItem('https://i.pinimg.com/originals/2c/f7/3a/2cf73a713a1cad2119852971fd87b438.png', 'diamond')).to(760,410)
-move(newItem('http://designlooter.com/images/water-drop-svg-13.png', 'water')).to(170, 200)
-move(newItem('https://www.freeiconspng.com/uploads/leaf-icon-png-6.png', 'leaf')).to(520, 240)
+// itemRiddle to give clue when item in inventory is clicked
+function riddles() {
+document.querySelector(".water").addEventListener('click', () => {
+    let water = prompt('I run smoother than most any rhyme; I love to fall but cannot climb.')
+    if (water === 'water'){
+        alert('Riddle solved successfully')
+    } else {
+        alert('Riddle answered incorrectly, one point of life force has been deducted.')
+        document.querySelector(".heart5").remove()
+    }
+})
+document.querySelector(".star").addEventListener('click', () => {
+    let star = prompt('I am a god, a planet, and a measurer of heat.')
+    if (star === 'mercury'){
+        alert('Riddle solved successfully')
+    } else {
+        alert('Riddle answered incorrectly, one point of life force has been deducted.')
+        document.querySelector(".heart4").remove()
+    }
+})
+document.querySelector(".flowerItem").addEventListener('click', () => {
+    let flowerItem = prompt('A vase is what I usually adorn, but beware of my thorns.')
+    if (flowerItem === 'rose'){
+        alert('Riddle solved successfully')
+    } else {
+        alert('Riddle answered incorrectly, one point of life force has been deducted.')
+        document.querySelector(".heart3").remove()
+    }
+})
+document.querySelector(".diamond").addEventListener('click', () => {
+    let diamond = prompt('Under pressure is the only way I work, and by myself is the only way I am hurt.')
+    if (diamond === 'diamond'){
+        alert('Riddle solved successfully')
+    } else {
+        alert('Riddle answered incorrectly, one point of life force has been deducted.')
+        document.querySelector(".heart2").remove()
+    }
+})
+document.querySelector(".leaf").addEventListener('click', () => {
+    let leaf = prompt('I can be big or small but you often see me fall.')
+    if (leaf === 'leaf'){
+        alert('Riddle solved successfully')
+    } else {
+        alert('Riddle answered incorrectly, one point of life force has been deducted.')
+        document.querySelector(".heart1").remove()
+    }
+})
+   if (document.querySelector(".heart1").remove() === true && document.querySelector(".heart2").remove() === true && document.querySelector(".heart3").remove() === true && document.querySelector(".heart4").remove() === true && document.querySelector(".heart5").remove()) {
+    alert('You have died.')
+   } else {
+    alert('You have successfully survived Zelden\'s riddles')
+   }
+}
+riddles()
