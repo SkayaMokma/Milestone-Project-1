@@ -216,10 +216,16 @@ document.querySelector(".leaf").addEventListener('click', () => {
         document.querySelector(".heart1").remove()
     }
 })
-   if (document.querySelector(".heart1").remove() === true && document.querySelector(".heart2").remove() === true && document.querySelector(".heart3").remove() === true && document.querySelector(".heart4").remove() === true && document.querySelector(".heart5").remove()) {
-    alert('You have died.')
-   } else {
-    alert('You have successfully survived Zelden\'s riddles')
-   }
+   
 }
 riddles()
+
+function ending() {
+if (document.querySelector(".heart1") === false && document.querySelector(".heart2") === false && document.querySelector(".heart3") === false && document.querySelector(".heart4") === false && document.querySelector(".heart5") === false) {
+    alert('You have died.')
+    } 
+else {
+    alert('You have successfully survived Zelden\'s riddles')
+  }
+}
+ending()
