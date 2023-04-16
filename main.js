@@ -23,14 +23,11 @@ function getUserName(){
     userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart4')
     userLives('https://cdn2.iconfinder.com/data/icons/casino-gambling-and-card-games/120/1b-512.png', 'heart5')
 
-
-
     return input
-    // input is username . function stores username and displays it in the top bar 
+    // input is username. function stores username and displays it in the top bar 
 }
 
-
-// move function to control the character
+// move function controls the character
 function move(element) {
     element.style.position = 'fixed'
 
@@ -122,7 +119,6 @@ function newItem(url, className, id) {
      return item
 }
 
-
 function handleDirectionChange(direction){
     if(direction === null){
         character.src = 'https://tse3.mm.bing.net/th?id=OIP.LpiWWF-WWtVFepE4VtysFQHaEK&pid=Api&P=0'
@@ -142,14 +138,13 @@ function handleDirectionChange(direction){
     }
     }
     
-
 // main calling code starts here 
-
 
 const character = newImage('https://tse3.mm.bing.net/th?id=OIP.LpiWWF-WWtVFepE4VtysFQHaEK&pid=Api&P=0', 'character')
 document.createElement('img')
 
 move(character).withArrowKeys(310, 215, handleDirectionChange)
+
 move(newImage('https://clipground.com/images/transparent-tree-clipart-3.png', 'tree')).to(200, 195)
 move(newImage('https://tse1.mm.bing.net/th?id=OIP.PjjmmdFYEKcgWdameLuzcgHaGh&pid=Api&P=0', 'bush')).to(780, 110)
 move(newImage('https://tse4.mm.bing.net/th?id=OIP.W1w7cloFTQfXgUSpBRNExQHaIS&pid=Api&P=0', 'roses')).to(550, 300)
@@ -171,61 +166,80 @@ move(newItem('https://www.freeiconspng.com/uploads/leaf-icon-png-6.png', 'leaf',
 
 // itemRiddle to give clue when item in inventory is clicked
 function riddles() {
-document.querySelector(".water").addEventListener('click', () => {
-    let water = prompt('I run smoother than most any rhyme; I love to fall but cannot climb.')
-    if (water === 'water'){
-        alert('Riddle solved successfully')
+    let heart1 = true
+    let heart2 = true
+    let heart3 = true
+    let heart4 = true
+    let heart5 = true
+    document.querySelector(".water").addEventListener('click', () => {
+        let water = prompt('I run smoother than most any rhyme; I love to fall but cannot climb.')
+        if (water === 'water'){
+            alert('Riddle solved successfully')
+        } else {
+            alert('Riddle answered incorrectly, one point of life force has been deducted.')
+            document.querySelector(".heart5").remove()
+            return heart5 = false
+        }
+    })
+    document.querySelector(".star").addEventListener('click', () => {
+        let star = prompt('I am a god, a planet, and a measurer of heat.')
+        if (star === 'mercury'){
+            alert('Riddle solved successfully')
+        } else {
+            alert('Riddle answered incorrectly, one point of life force has been deducted.')
+            document.querySelector(".heart4").remove()
+            return heart4 = false
+        }
+    })
+    document.querySelector(".flowerItem").addEventListener('click', () => {
+        let flowerItem = prompt('A vase is what I usually adorn, but beware of my thorns.')
+        if (flowerItem === 'rose'){
+            alert('Riddle solved successfully')
+        } else {
+            alert('Riddle answered incorrectly, one point of life force has been deducted.')
+            document.querySelector(".heart3").remove()
+            return heart3 = false
+        }
+    })  
+    document.querySelector(".diamond").addEventListener('click', () => {
+        let diamond = prompt('Under pressure is the only way I work, and by myself is the only way I am hurt.')
+        if (diamond === 'diamond'){
+            alert('Riddle solved successfully')
+        } else {
+            alert('Riddle answered incorrectly, one point of life force has been deducted.')
+            document.querySelector(".heart2").remove()
+            return heart2 = false
+        }
+    })
+    document.querySelector(".leaf").addEventListener('click', () => {
+        let leaf = prompt('I can be big or small but you often see me fall.')
+        if (leaf === 'leaf'){
+            alert('Riddle solved successfully')
+        } else {
+            alert('Riddle answered incorrectly, one point of life force has been deducted.')
+            document.querySelector(".heart1").remove()
+            return heart1 = false
+        }
+    })
+    let button = document.getElementById('button')
+button.addEventListener('click', () => {
+    if (heart1 === false && heart2 === false && heart3 === false && heart4 === false && heart5 === false){
+        console.log('dead')
+        let loseScreen = document.createElement('div')
+        loseScreen.setAttribute('class', 'loseScreen')
+        document.body.append(loseScreen)
+        loseScreen.append('You have died')
+        
     } else {
-        alert('Riddle answered incorrectly, one point of life force has been deducted.')
-        document.querySelector(".heart5").remove()
+        console.log('alive')
+        let winScreen = document.createElement('div')
+        winScreen.setAttribute('class', 'winScreen')
+        document.body.append(winScreen)
+        winScreen.append('Congratulations! You have survived Zelden\'s riddles.')
+       
     }
 })
-document.querySelector(".star").addEventListener('click', () => {
-    let star = prompt('I am a god, a planet, and a measurer of heat.')
-    if (star === 'mercury'){
-        alert('Riddle solved successfully')
-    } else {
-        alert('Riddle answered incorrectly, one point of life force has been deducted.')
-        document.querySelector(".heart4").remove()
-    }
-})
-document.querySelector(".flowerItem").addEventListener('click', () => {
-    let flowerItem = prompt('A vase is what I usually adorn, but beware of my thorns.')
-    if (flowerItem === 'rose'){
-        alert('Riddle solved successfully')
-    } else {
-        alert('Riddle answered incorrectly, one point of life force has been deducted.')
-        document.querySelector(".heart3").remove()
-    }
-})
-document.querySelector(".diamond").addEventListener('click', () => {
-    let diamond = prompt('Under pressure is the only way I work, and by myself is the only way I am hurt.')
-    if (diamond === 'diamond'){
-        alert('Riddle solved successfully')
-    } else {
-        alert('Riddle answered incorrectly, one point of life force has been deducted.')
-        document.querySelector(".heart2").remove()
-    }
-})
-document.querySelector(".leaf").addEventListener('click', () => {
-    let leaf = prompt('I can be big or small but you often see me fall.')
-    if (leaf === 'leaf'){
-        alert('Riddle solved successfully')
-    } else {
-        alert('Riddle answered incorrectly, one point of life force has been deducted.')
-        document.querySelector(".heart1").remove()
-    }
-})
-   
+
 }
 riddles()
 
-function ending() {
-if (document.querySelector(".heart1") === false && document.querySelector(".heart2") === false && document.querySelector(".heart3") === false && document.querySelector(".heart4") === false && document.querySelector(".heart5") === false) {
-    alert('You have died.')
-    } 
-else {
-    alert('You have successfully survived Zelden\'s riddles')
-  }
-}
-ending()
